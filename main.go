@@ -45,7 +45,7 @@ func main() {
 			log.Fatalf("Error during regression for Set %d: %v", i+1, err)
 		}
 
-		// Output Intercept and Slope for the regression coefficients
+		// Output Intercept and Slope
 		fmt.Printf("Regression model coefficients for Set %d: Intercept: %.2f, Slope: %.2f\n", i+1, coeffs[0], coeffs[1])
 	}
 
