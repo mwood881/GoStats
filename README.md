@@ -1,4 +1,4 @@
-### GoStats
+# GoStats
 Statistical Package using Go vs R and Python
 
 Github Repository: https://github.com/mwood8881/GoStats.git
@@ -9,7 +9,7 @@ This program uses Go to perform linear regression on the Anscombe Quartet datase
 
 The Anscombe Quartet is four datasets with different distributions. 
 
-# Features
+## Features
 - Linear regression on Anscombe Quartet with Go
 - Compares with Python and R versions
 - Measures execution times for all programs
@@ -21,10 +21,9 @@ Install
 -Go testing tools
 - Python and R
 
-# Getting Started
+## Getting Started
 1) Clone respository:
-   
-   ```bash
+```bash
 git clone https://github.com/yourusername/anscombe-go-stats.git
 cd anscombe-go-stats ```
 
