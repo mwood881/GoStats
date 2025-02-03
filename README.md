@@ -28,7 +28,7 @@ git clone https://github.com/yourusername/anscombe-go-stats.git
 cd anscombe-go-stats ```
 
 2) Install Go package stats:
-   ```bash
+```bash
 go get github.com/montanaflynn/stats
 ```
 
