@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"log"
+	"sync"
 	"time"
 )
 
@@ -31,22 +32,40 @@ func main() {
 	// mark the time it takes to run
 	start := time.Now()
 
+	var wg sync.WaitGroup
+	results := make(chan string, 4)
+
 	// Fit linear regression models for each set of data
 	for i := 0; i < 4; i++ {
-		// Get the data for the current set
-		xData := x[i]
-		yData := y[i]
+		wg.Add(1)
+		go func(i int) {
+			defer wg.Done()
+			// Get the data for the current set
+			xData := x[i]
+			yData := y[i]
 
-		// Perform linear regression (calling the function defined in linear_regression.go)
-		// create file linear regression but do not run individually
-		// run this: go run main.go linear_regression.go instead then % go test -bench
-		coeffs, err := linearRegression(xData, yData)
-		if err != nil {
-			log.Fatalf("Error during regression for Set %d: %v", i+1, err)
-		}
+			// Perform linear regression (calling the function defined in linear_regression.go)
+			// create file linear regression but do not run individually
+			// run this: go run main.go linear_regression.go instead then % go test -bench
+			coeffs, err := linearRegression(xData, yData)
+			if err != nil {
+				log.Fatalf("Error during regression for Set %d: %v", i+1, err)
+			}
 
-		// Output Intercept and Slope
-		fmt.Printf("Regression model coefficients for Set %d: Intercept: %.2f, Slope: %.2f\n", i+1, coeffs[0], coeffs[1])
+			// Output Intercept and Slope
+			results <- fmt.Sprintf("Regression model coefficients for Set %d: Intercept: %.2f, Slope: %.2f\n", i+1, coeffs[0], coeffs[1])
+		}(i)
+	}
+
+	// Wait for all goroutines to finish
+	go func() {
+		wg.Wait()
+		close(results)
+	}()
+
+	// Collect and print results
+	for result := range results {
+		fmt.Print(result)
 	}
 
 	// Output the total time and memory

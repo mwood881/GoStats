@@ -1,34 +1,37 @@
 package main
 
-// when importing do not use github in the beginning of the link
-// when you do this it somehow always produces an error
 import (
+	"errors"
+
 	"gonum.org/v1/gonum/mat"
 )
 
 // linearRegression performs a simple linear regression (least squares).
 func linearRegression(x []float64, y []float64) ([]float64, error) {
-	// Add constant  to the independent variable
-	// this is the intercept variable
-	X := make([][]float64, len(x))
-	for i := 0; i < len(x); i++ {
-		X[i] = []float64{1, x[i]} // 1 for intercept
+	if len(x) != len(y) {
+		return nil, errors.New("x and y must have the same length")
 	}
 
-	// matrix needed to be created
-	XMat := mat.NewDense(len(X), 2, nil)
-	for i, row := range X {
-		XMat.SetRow(i, row)
+	// Create the design matrix with an intercept term
+	X := mat.NewDense(len(x), 2, nil)
+	for i := 0; i < len(x); i++ {
+		X.Set(i, 0, 1)    // Intercept term
+		X.Set(i, 1, x[i]) // Independent variable
 	}
-	YMat := mat.NewVecDense(len(y), y)
+
+	// Create the response vector
+	Y := mat.NewVecDense(len(y), y)
 
 	// Solve for coefficients using least squares
-	// find coefficients
 	var coeffs mat.VecDense
-	err := coeffs.SolveVec(XMat, YMat)
+	err := coeffs.SolveVec(X, Y)
 	if err != nil {
 		return nil, err
 	}
-	// Return intercept and slope
-	return []float64{coeffs.At(0, 0), coeffs.At(1, 0)}, nil
+
+	// Extract coefficients
+	intercept := coeffs.AtVec(0)
+	slope := coeffs.AtVec(1)
+
+	return []float64{intercept, slope}, nil
 }
