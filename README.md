@@ -1,7 +1,7 @@
 ## AI-Generated Go Code for Go for Statistics
 
 
-## AI-assisted programming (Using Github Copilot): I wrote this in txt file before
+## AI-assisted programming (Using Github Copilot): 
 
 In the copilot-suggestions branch, you will find the three files that were refactored using Github Copilot. You can compare and pull the changes from this branch and the main branch. It may say there is not much to compare, but they do have very similar features other than the changes made from the copilot. I would ask the chat questions and it would output a more efficient result. 
 
@@ -16,7 +16,6 @@ Added single point case handling to handle when there is only one data point. Pr
 Linear_regression_test.file: I asked how to make this better and the copilot added multiple unit tests and a helper function of equalSlices to help compare equality. The benchmark stayed the same. However, when trying to test the files, the single point test failed and continued to fail the copilot was unable to fix that. However, being able to test valid input, mismatched input lengths, and edge cases helps better performance testing for the assignment which was helpful when using the copilot. 
 
 Overall, I think Copilot is helpful to make code more efficient after writing it. However, it is important to check that it works correctly as it failed in the single point test still in the linear regression test file. I think it is also helpful to simplify code in loops and create suggestions when typing. 
-![image](https://github.com/user-attachments/assets/03809fb1-864f-40c4-a9b3-0939f0b5b7fe)
 
 
 ## Selected LLM-Based Service
