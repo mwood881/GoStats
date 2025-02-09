@@ -1,7 +1,7 @@
 ## AI-Generated Go Code for Go for Statistics
 
 
-## AI-assisted programming (Using Github Copilot):
+## AI-assisted programming (Using Github Copilot): I wrote this in txt file before
 
 In the copilot-suggestions branch, you will find the three files that were refactored using Github Copilot. You can compare and pull the changes from this branch and the main branch. It may say there is not much to compare, but they do have very similar features other than the changes made from the copilot. I would ask the chat questions and it would output a more efficient result. 
 
@@ -20,7 +20,6 @@ Overall, I think Copilot is helpful to make code more efficient after writing it
 
 
 ## Selected LLM-Based Service
-- 
 
 - # Step-by-Step Process:
 - 1) Selecting the LLM Agent
@@ -69,7 +68,9 @@ ChatGPT provided  Go code for statistical analysis with minimal user interventio
 
 ## Materials Used
 -Go
--ChatGPT https://chatgpt.com/ 
+
+-ChatGPT (https://chatgpt.com/ )
+
 -Github Copilot https://github.com/features/copilot?ef_id=_k_CjwKCAiAwaG9BhAREiwAdhv6Y9T51-Htvu15KFMnz2BH1_NC0asjLlMdUfGn8aWsgoP1A2zKGFTxkRoC_NgQAvD_BwE_k_&OCID=AIDcmmb150vbv1_SEM__k_CjwKCAiAwaG9BhAREiwAdhv6Y9T51-Htvu15KFMnz2BH1_NC0asjLlMdUfGn8aWsgoP1A2zKGFTxkRoC_NgQAvD_BwE_k_&gad_source=1&gclid=CjwKCAiAwaG9BhAREiwAdhv6Y9T51-Htvu15KFMnz2BH1_NC0asjLlMdUfGn8aWsgoP1A2zKGFTxkRoC_NgQAvD_BwE (I used this youtube channel to help: https://www.youtube.com/watch?v=z1ycDvspv8U )
 
 
