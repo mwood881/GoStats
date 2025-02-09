@@ -5,6 +5,8 @@ Github Repository: https://github.com/mwood8881/GoStats.git
 
 ## Project Description
 
+## Look at branch copilot suggestions for the Readme.md file for the automated ai readme file.
+
 This program uses Go to perform linear regression on the Anscombe Quartet dataset which is then compared to the results of running it through Python and R. It executes the time and memory to determine which program is best used for this linear regression task. 
 
 The Anscombe Quartet is four datasets with different distributions. 
